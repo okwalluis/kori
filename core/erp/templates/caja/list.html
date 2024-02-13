@@ -1,0 +1,19 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block head_list %}
+    <script src="{% static 'caja/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" style="width: 10%;">ID</th>
+        <th scope="col" style="width: 25%;">Descripción</th>
+        <th scope="col" style="width: 25%;">Tipo Caja</th>
+        <th scope="col" style="width: 20%;">Moneda</th>
+        <th scope="col" style="width: 20%;">Opciones</th>
+    </tr>
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

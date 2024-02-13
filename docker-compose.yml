@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks:
+  docker_network:
+    driver: bridge
+
+services:
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: own
+      POSTGRES_PASSWORD: own
+      POSTGRES_DB: horus
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: okwalluis@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: own
+    ports:
+      - "80:80"

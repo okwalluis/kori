@@ -1,0 +1,204 @@
+{% load static %}
+<!-- <aside class="main-sidebar sidebar-light-primary elevation-4"> -->
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+
+    <a href="{% url 'erp:dashboard' %}" class="brand-link">
+        <img src="{% static 'img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">VirtuoSys</span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.get_image }}" class="img-circle" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ request.user.username }}</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item menu-is-opening menu-open">
+                    <a href="#" class="nav-link">
+                        <p>
+                            Base
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item menu-is-opening menu-open">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    <i class="far fa-circle nav-icon"></i>
+                                    Mantenimientos
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="{% url 'base:persona_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-users"></i>
+                                        <p>Personas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'base:empresa_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-building"></i>
+                                        <p>Empresas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'base:sucursal_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-warehouse"></i>
+                                        <p>Sucursales</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'base:deposito_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-store"></i>
+                                        <p>Depósitos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'base:pais_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-globe"></i>
+                                        <p>Países</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item menu-is-opening menu-open">
+                    <a href="#" class="nav-link">
+                        <p>
+                            Control de Stock
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item menu-is-opening menu-open">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    <i class="far fa-circle nav-icon"></i>
+                                    Mantenimientos
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:categoria_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-truck-loading"></i>
+                                        <p>Categorías</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:subcategoria_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-object-group"></i>
+                                        <p>SubCategorías</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:unidad_medida_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-ruler"></i>
+                                        <p>Unidades de Medidas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:conversion_medida_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-weight"></i>
+                                        <p>Conversiones de Medidas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:producto_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-boxes"></i>
+                                        <p>Producto</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'control_stock:tipo_operacion_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-sliders"></i>
+                                        <p>Operaciones</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Procesos</p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-truck-loading"></i>
+                                        <p>Movimientos</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Consultas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Reportes</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item menu-is-opening menu-open">
+                    <a href="#" class="nav-link">
+                        <p>
+                            ERP
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item menu-is-opening menu-open">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    <i class="far fa-circle nav-icon"></i>
+                                    Mantenimientos
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:caja_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-wallet"></i>
+                                        <p>Cajas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:concepto_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-arrows-to-circle"></i>
+                                        <p>Conceptos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:moneda_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-money-bill"></i>
+                                        <p>Monedas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:cab_movimiento_list' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-money-bill"></i>
+                                        <p>Movimientos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</aside>
